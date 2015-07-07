@@ -3,19 +3,21 @@
 <head>
   <meta charset="UTF-8">
   <title>Document</title>
-  <link rel="stylesheet" href="style.css">
+  <link rel="stylesheet" href="public/style.css">
 </head>
 <body>
-  <div class='wrapper'>
-{{ #colors }}
+ {{ #colors }}
   <main>
     <section>
-      <div class='color1'><a href='colors/{{ _id }}/'><a href='/colors/{{ _id }}/'>{{ r }} {{ b }}{{ a }}</a></a>Mixed color 1</div>
-      <div class='color2'>Mixed color 2</div>
-      <div class='color3'>New color</div>
+      <div class='color' style='background-color: rgba({{ r }}, {{ g }}, {{ b }}, 1)'></div>
     </section>
   </main>
-</div><!-- End of wrapper -->
-{{ /colors }}
+ {{ /colors }}
+  <form action="/colors" method='post'>
+    <input type="text" id='r' name='r' placeholder='red'>
+    <input type="text" id='g' name='g' placeholder='green'>
+    <input type="text" id='b' name='b' placeholder='blue'>
+    <input value='Add color' type='submit'>
+  </form>
 </body>
 </html>
