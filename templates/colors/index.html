@@ -6,13 +6,16 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
+  <div class='wrapper'>
+{{ #colors }}
   <main>
     <section>
-      <div class='color1'>Mixed color 1</div>
+      <div class='color1'><a href='colors/{{ _id }}/'><a href='/colors/{{ _id }}/'>{{ r }} {{ b }}{{ a }}</a></a>Mixed color 1</div>
       <div class='color2'>Mixed color 2</div>
       <div class='color3'>New color</div>
     </section>
   </main>
-
+</div><!-- End of wrapper -->
+{{ /colors }}
 </body>
 </html>

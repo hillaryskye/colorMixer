@@ -3,7 +3,7 @@ var routes = require('routes')(),
       view = require('mustache'),
       mime = require('mime'),
         db = require('monk')('localhost/colors'),
-    movies = db.get('colors'),
+    colors = db.get('colors'),
         qs = require('qs'),
       view = require('./view')
 
@@ -14,7 +14,7 @@ var routes = require('routes')(),
           res.setHeader('Content-Type', 'text/html')
           colors.find({}, function (err, docs) {
             if (err) res.end('oops from root')
-            var template = view.render('colors/index', { movies: docs})
+            var template = view.render('colors/index', { colors: docs})
             res.end(template)
           })
         }
@@ -36,3 +36,5 @@ var routes = require('routes')(),
           })
         }
       })
+
+module.exports = routes
